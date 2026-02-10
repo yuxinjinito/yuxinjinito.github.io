@@ -1,8 +1,5 @@
+- Dean's List at University of Wisconsin-Madison. **(GPA:4.0/4.0)**
 
-- **Dean's List (All Semester)** at University of Minnesota Twin Cities.
+- University Academic Achievement Award, 2025.**(10%)**
 
-- Special Corporate Scholarships, 2023. **(1/30)**
-
-- School Special Academic Scholarship, 2023.**(1%)**
-
-- First-Class Academic Scholarship, 2022.**(8%)**
+- University Academic Excellence Award, 2024.**(5%)**

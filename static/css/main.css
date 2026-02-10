@@ -110,6 +110,16 @@ section .main-body{
     cursor: pointer;
 }
 
+/* Tighter vertical spacing between Publications and Awards
+   (since the Side Projects section is currently hidden) */
+#publications {
+    padding-bottom: 3rem;
+}
+
+#awards {
+    padding-top: 3rem;
+}
+
 @media screen and (max-width: 991px) {
 
     .photo img {

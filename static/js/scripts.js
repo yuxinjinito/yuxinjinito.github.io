@@ -2,11 +2,11 @@
 
 const content_dir = 'contents/'
 const config_file = 'config.yml'
-const section_names = ['home', 'publications', 'awards', 'project', 'service', 'CV']
+// Sections that actually exist on the page (project is temporarily removed)
+const section_names = ['home', 'publications', 'awards', 'service', 'CV']
 
 
 window.addEventListener('DOMContentLoaded', event => {
-
     // Activate Bootstrap scrollspy on the main nav element
     const mainNav = document.body.querySelector('#mainNav');
     if (mainNav) {
