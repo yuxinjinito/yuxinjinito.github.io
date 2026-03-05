@@ -23,6 +23,21 @@
 
 .top-section h2 {
     font-weight: 400;
+    font-size: 2rem !important;
+    line-height: 1.35;
+    max-width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+    .top-section h2 {
+        font-size: 2.4rem !important;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .top-section h2 {
+        font-size: 2.8rem !important;
+    }
 }
 
 .top-section .top-section-content {

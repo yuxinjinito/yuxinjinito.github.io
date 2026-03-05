@@ -1032,6 +1032,22 @@
   btnEn.addEventListener('click', function () { setLang('en'); });
   btnZh.addEventListener('click', function () { setLang('zh'); });
 
+  // ===== Theme =====
+  var themeBtn = document.getElementById('theme-toggle');
+  var savedTheme = localStorage.getItem('mj-theme') || 'dark';
+
+  function applyTheme(theme) {
+    savedTheme = theme;
+    localStorage.setItem('mj-theme', theme);
+    document.body.classList.toggle('light', theme === 'light');
+  }
+
+  themeBtn.addEventListener('click', function () {
+    applyTheme(savedTheme === 'dark' ? 'light' : 'dark');
+  });
+
+  applyTheme(savedTheme);
+
   // ===== Sort =====
   function buildSortBar() {
     var t = i18n[lang];
@@ -1061,6 +1077,21 @@
     return arr;
   }
 
+  // ===== Card Sizing (by implicit tags / prompt) =====
+  var _sizePromoteTags = ['cinematic', 'dark', 'portrait', 'nature', 'fantasy', 'urban', 'photograph', 'photo'];
+  var _sizeDemoteTags = ['cute', 'bw', 'anime', 'vector', 'icon', 'sketch'];
+
+  function getCardSize(id) {
+    var art = artworks.find(function (a) { return a.id === id; });
+    if (!art) return 'md';
+    var p = (art.prompt || '').toLowerCase();
+    var promote = _sizePromoteTags.some(function (tag) { return p.indexOf(tag) !== -1; });
+    var demote = _sizeDemoteTags.some(function (tag) { return p.indexOf(tag) !== -1; });
+    if (promote && !demote && p.length > 80) return 'lg';
+    if (demote && p.length < 120) return 'sm';
+    return 'md';
+  }
+
   // ===== Gallery =====
   function renderGallery() {
     var sorted = getSorted();
@@ -1068,7 +1099,8 @@
     galleryEl.innerHTML = sorted.map(function (art, idx) {
       var liked = isLiked(art.id);
       var count = getLikeCount(art.id);
-      var cls = 'card' + (art.featured && sortMode === 'curated' ? ' card-featured' : '');
+      var size = getCardSize(art.id);
+      var cls = 'card card-' + size;
       return '<div class="' + cls + '" data-id="' + art.id + '">' +
         '<div class="card-img-wrap"><img src="' + art.image + '" alt="" loading="lazy"></div>' +
         '<div class="card-overlay">' +
