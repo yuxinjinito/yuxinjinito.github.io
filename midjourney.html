@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Midjourney Gallery — Yuxin Jin</title>
+  <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="static/css/midjourney.css" />
+</head>
+
+<body>
+
+  <!-- Back Link -->
+  <a class="back-link" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6" />
+    </svg>
+    Homepage
+  </a>
+
+  <!-- Travel Memo Link -->
+  <a class="back-link" href="photos.html" style="left: auto; right: 24px;">
+    Travel Memo
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6" />
+    </svg>
+  </a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <h1>Midjourney Gallery</h1>
+    <p class="subtitle">AI-generated artworks &amp; the prompts behind them</p>
+  </header>
+
+  <!-- Filter -->
+  <div class="filter-bar" id="filter-bar"></div>
+
+  <!-- Gallery Grid -->
+  <main class="gallery" id="gallery"></main>
+
+  <!-- Detail Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <div class="modal"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    &copy; 2026 Yuxin Jin &middot; Artworks generated with Midjourney
+  </footer>
+
+  <script src="static/js/midjourney.js"></script>
+</body>
+
+</html>
