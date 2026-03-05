@@ -1,60 +1,69 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Midjourney Gallery — Yuxin Jin</title>
+  <title>Gallery — Yuxin Jin</title>
   <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="static/css/midjourney.css" />
 </head>
 
 <body>
 
-  <!-- Back Link -->
-  <a class="back-link" href="index.html">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-      stroke-linejoin="round">
-      <polyline points="15 18 9 12 15 6" />
-    </svg>
-    Homepage
-  </a>
-
-  <!-- Travel Memo Link -->
-  <a class="back-link" href="photos.html" style="left: auto; right: 24px;">
-    Travel Memo
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-      stroke-linejoin="round">
-      <polyline points="9 18 15 12 9 6" />
-    </svg>
-  </a>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <a href="index.html" id="back-link">
+      <span>←</span><span class="back-text"> Home</span>
+    </a>
+    <div class="top-right">
+      <div class="lang-toggle">
+        <button class="lang-btn" id="btn-en">EN</button>
+        <button class="lang-btn" id="btn-zh">中</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Header -->
   <header class="site-header">
-    <h1>Midjourney Gallery</h1>
-    <p class="subtitle">AI-generated artworks &amp; the prompts behind them</p>
+    <h1 id="header-title">Gallery</h1>
+    <p class="subtitle" id="header-sub">AI-generated artworks with Midjourney</p>
   </header>
 
-  <!-- Filter -->
-  <div class="filter-bar" id="filter-bar"></div>
+  <!-- Sort -->
+  <div class="sort-bar-wrap" id="sort-bar"></div>
 
-  <!-- Gallery Grid -->
+  <!-- Gallery -->
   <main class="gallery" id="gallery"></main>
 
-  <!-- Detail Modal -->
+  <!-- Modal -->
   <div class="modal-overlay" id="modal-overlay">
     <button class="modal-close" aria-label="Close">&times;</button>
     <div class="modal"></div>
   </div>
 
+  <!-- Share Popup -->
+  <div class="share-overlay" id="share-overlay">
+    <div class="share-popup">
+      <button class="share-popup-close" id="share-close">&times;</button>
+      <div class="share-icons" id="share-icons"></div>
+      <div class="share-link-bar">
+        <input class="share-link-input" id="share-link-input" type="text" readonly />
+        <button class="share-link-copy" id="share-link-copy">
+          <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="site-footer">
-    &copy; 2026 Yuxin Jin &middot; Artworks generated with Midjourney
+    <span id="footer-text">Yuxin Jin — Midjourney Artworks</span>
   </footer>
 
   <script src="static/js/midjourney.js"></script>
