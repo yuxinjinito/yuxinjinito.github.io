@@ -209,19 +209,27 @@ body:not(.light) .theme-toggle .icon-sun { display: none; }
   background: var(--accent-dim);
 }
 
-/* ===== Gallery — Masonry ===== */
+/* ===== Gallery — explicit columns, row-major order (1st row: 1,2,3; 2nd row: 4,5,6) ===== */
 .gallery {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 24px 80px;
-  column-count: 3;
-  column-gap: 10px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.gallery-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 /* ===== Card ===== */
 .card {
-  break-inside: avoid;
-  margin-bottom: 10px;
   cursor: pointer;
   animation: reveal 0.5s ease both;
 }
@@ -251,6 +259,31 @@ body:not(.light) .theme-toggle .icon-sun { display: none; }
 .card-lg .card-img-wrap { margin-bottom: 2px; }
 .card-sm { padding: 0 12%; }
 .card-sm .card-img-wrap { border-radius: 1px; }
+
+/* Multi-image card — same prompt, elegantly linked */
+.card-multi .card-img-wrap.card-multi-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  padding: 2px;
+}
+.card-multi-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4/5;
+  transition: transform 0.5s ease;
+}
+.card-multi:hover .card-multi-wrap img {
+  transform: scale(1.02);
+}
+.card-multi-badge {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-left: 4px;
+  opacity: 0.9;
+}
 
 /* Card Info — always visible below image */
 .card-overlay {
@@ -339,6 +372,45 @@ body.light .card:hover .card-title-text {
   min-width: 8px;
 }
 
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.recommend-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 6px;
+}
+
+.recommend-title {
+  font-size: 0.62rem;
+  letter-spacing: 0.6px;
+  color: var(--text-dim);
+  margin-right: 2px;
+  white-space: nowrap;
+}
+
+.rec-thumb {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 0;
+  background: var(--card-bg);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.rec-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* ===== Modal ===== */
 .modal-overlay {
   position: fixed;
@@ -396,6 +468,95 @@ body.light .card:hover .card-title-text {
   border-radius: 2px;
   display: block;
   margin-bottom: 40px;
+}
+
+/* Modal carousel — multi-image same prompt */
+.modal-carousel {
+  position: relative;
+  margin-bottom: 40px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.modal-carousel-stage {
+  width: 100%;
+  height: 72vh;
+  max-height: 640px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--card-bg);
+}
+.modal-carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.modal-carousel-img {
+  margin-bottom: 0;
+  height: 100%;
+  object-fit: contain;
+  background: var(--card-bg);
+  /* flex: 0 0 (100/n)% set inline so each slide = one stage width */
+}
+.modal-carousel-prev,
+.modal-carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: var(--modal-bg);
+  color: var(--text-muted);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  z-index: 2;
+}
+.modal-carousel-prev:hover,
+.modal-carousel-next:hover {
+  opacity: 1;
+  color: var(--text);
+}
+.modal-carousel-prev {
+  left: 12px;
+}
+.modal-carousel-next {
+  right: 12px;
+}
+.modal-carousel-prev svg,
+.modal-carousel-next svg {
+  width: 22px;
+  height: 22px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+.modal-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+.modal-carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--text-dim);
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+.modal-carousel-dot:hover {
+  opacity: 0.8;
+}
+.modal-carousel-dot.active {
+  background: var(--accent);
+  opacity: 1;
 }
 
 .modal-content {
@@ -598,7 +759,7 @@ body.light .card:hover .card-title-text {
   background: none;
   border: none;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-dim);
   transition: color 0.25s ease;
   flex-shrink: 0;
 }
@@ -613,10 +774,10 @@ body.light .card:hover .card-title-text {
   stroke-linejoin: round;
 }
 
-.share-btn:hover { color: var(--text); }
+.share-btn:hover { color: var(--text-muted); }
 
 .modal-share {
-  color: var(--text-muted);
+  color: var(--text-dim);
 }
 
 .modal-share svg {
@@ -773,17 +934,15 @@ body.light .card:hover .card-title-text {
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
   .gallery {
-    column-count: 2;
-    column-gap: 8px;
+    gap: 8px;
     padding: 0 16px 60px;
   }
-  .card { margin-bottom: 8px; }
+  .gallery-col { gap: 8px; }
   .card-sm { padding: 0 8%; }
 }
 
 @media (max-width: 520px) {
   .gallery {
-    column-count: 1;
     max-width: 400px;
     padding: 0 12px 50px;
   }
