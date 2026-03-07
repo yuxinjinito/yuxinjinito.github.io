@@ -2129,7 +2129,7 @@
       id: 138,
       order: 87.5,
       featured: false,
-      image: 'static/assets/midjourney/Cyberbullying_Effects_Poster_Illustration_ar16_9_raw_v6.png',
+      image: 'static/assets/midjourney/Cyberbullying_effects_poster_ar16_9_raw_v6.png',
       date: '2024.04.08',
       prompt: 'A poster illustration of the effects of cyberbullying on teenagers, black background, a teenager faces the camera and smiles as he sits in front of his computer, which reveals a green light in the middle of the night. in the style of tenebrism, Caravaggio, Artemisia Gentileschi, dark cyan and amber, romantic academia, chiaroscuro mastery, joyful and optimistic, cartoon violence, brutalist, award-winning ar16:9 raw v6',
       params: { version: 'V6', aspect: '16:9', style: 'Raw' },
