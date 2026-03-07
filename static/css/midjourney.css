@@ -475,27 +475,25 @@ body.light .card:hover .card-title-text {
   width: 40px;
   height: 40px;
   border: none;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+  background: transparent;
   color: #eee;
   font-size: 1.5rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 1;
-  transition: color var(--transition), background var(--transition);
+  opacity: 0.55;
+  transition: opacity var(--transition), color var(--transition);
 }
 
-.modal-close:hover { color: #fff; background: rgba(0, 0, 0, 0.7); }
+.modal-close:hover { opacity: 0.9; color: #fff; }
 
 body.light .modal-close {
-  background: rgba(255, 255, 255, 0.9);
   color: #333;
 }
 body.light .modal-close:hover {
   color: #111;
-  background: #fff;
 }
 
 .modal-image {
