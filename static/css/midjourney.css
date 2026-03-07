@@ -386,6 +386,7 @@ body.light .card:hover .card-title-text {
   display: flex;
   gap: 12px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .recommend-inline {
@@ -393,7 +394,14 @@ body.light .card:hover .card-title-text {
   align-items: center;
   gap: 6px;
   margin-left: 6px;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-right: 8px;
 }
+.recommend-inline::-webkit-scrollbar { display: none; }
 
 .recommend-title {
   font-size: 0.62rem;
@@ -401,11 +409,13 @@ body.light .card:hover .card-title-text {
   color: var(--text-dim);
   margin-right: 2px;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .rec-thumb {
   width: 28px;
   height: 28px;
+  flex-shrink: 0;
   border: 1px solid var(--border);
   border-radius: 2px;
   padding: 0;
@@ -464,14 +474,27 @@ body.light .card:hover .card-title-text {
   width: 40px;
   height: 40px;
   border: none;
-  background: none;
-  color: var(--text-muted);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #eee;
   font-size: 1.5rem;
   cursor: pointer;
-  transition: color var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition), background var(--transition);
 }
 
-.modal-close:hover { color: var(--text); }
+.modal-close:hover { color: #fff; background: rgba(0, 0, 0, 0.7); }
+
+body.light .modal-close {
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+body.light .modal-close:hover {
+  color: #111;
+  background: #fff;
+}
 
 .modal-image {
   width: 100%;
