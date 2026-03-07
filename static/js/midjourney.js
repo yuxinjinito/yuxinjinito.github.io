@@ -2214,6 +2214,13 @@ a    },
       if (typeof done === 'function') done();
       return;
     }
+    var called = false;
+    function finish() {
+      if (called) return;
+      called = true;
+      if (typeof done === 'function') done();
+    }
+    var timeout = setTimeout(finish, 4000);
     try {
       if (!window.firebase.apps || !window.firebase.apps.length) {
         window.firebase.initializeApp(FIREBASE_CONFIG);
@@ -2221,16 +2228,19 @@ a    },
       var db = window.firebase.database();
       var ref = db.ref('likes');
       ref.once('value', function (snap) {
+        clearTimeout(timeout);
         var val = snap.val();
         if (val && typeof val === 'object') {
           for (var k in val) if (Object.prototype.hasOwnProperty.call(val, k)) globalLikes[k] = val[k];
         }
-        if (typeof done === 'function') done();
+        finish();
       }, function () {
-        if (typeof done === 'function') done();
+        clearTimeout(timeout);
+        finish();
       });
     } catch (e) {
-      if (typeof done === 'function') done();
+      clearTimeout(timeout);
+      finish();
     }
   }
 
