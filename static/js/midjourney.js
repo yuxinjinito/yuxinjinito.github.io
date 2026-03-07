@@ -2169,7 +2169,7 @@
       date: '2024.03.14',
       prompt: 'Cool girl, Wasteland Style Dress --ar 16:9 --niji 6',
       params: { version: 'Niji 6', aspect: '16:9', style: 'Wasteland' },
-a    },
+    },
   ];
 
   // ===== Likes：全局统计（Firebase）+ 本机「已赞」状态（localStorage） =====
