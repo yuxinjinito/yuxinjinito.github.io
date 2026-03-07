@@ -81,6 +81,7 @@
         63: 'Cat wearing a Chinese dragon-style hat — Japanese animation green dragon, dark cyan and gold, pop-inspired imagery, colorful free-flowing lines.',
         64: 'The short-haired girl in the white dress looking down and sniffing at the flowers in her hand — made of glass, aquamarine, romantic, emphasis on light and color, aggressive digital illustration.',
         65: 'A cat under a tree, in the style of ethereal lighting and graceful balance. Shot on Fujifilm GFX 50R with Kodak Tri-X 400 film stock.',
+        66: 'A white beckoning cat (Maneki-neko) as Chinese god of wealth — 3D cute style, red and gold, festive, gold ingots, red envelopes, Fú character, prosperous New Year mood.',
         67: 'Award-winning close-up of pink blossoms on a branch in spring — snow-scene style, Chinese traditional art influence, dark white and white, blown-off-roof perspective, soft and dreamy.',
         68: 'Risograph-style print of an Indian man tuning a piano — influences from Chinese art and Maud Lewis, full-body view, simple lines, deep forest green, rust orange, stone gray, muddy brown on white.',
         69: 'Cat and lilies with a cosmic dark background — ethereal and serene.',
@@ -145,7 +146,7 @@
         128: 'Two black swans and three gray cygnets in a lotus pond.',
         129: 'A man and a woman typing on phones — Picasso-style canvas of steel plates and iron wire, gold.',
         130: 'Minimalist aerial view: red water left, white water right, one man rowing between.',
-        131: 'Scrambled Eggs with Tomatoes.',
+        131: 'A cute cat playing underwater, chasing a jellyfish — captured from below the surface, theme of overcoming fear.',
         132: 'Beatrix Potter–style: mother rabbit reading a fairy tale to baby rabbit in bed, flower-patterned pajamas.',
         133: 'Dogs lying happily together.',
         134: 'Framed photo: wedding of humanoid tomato in suit and humanoid egg in wedding dress.',
@@ -217,6 +218,7 @@
         63: 'Totoro',
         64: 'Looking Down',
         65: 'Cat Under a Tree',
+        66: 'God of Wealth Cat',
         67: 'Pink Blossoms',
         68: 'The Tuner',
         69: 'A Glance Eternal',
@@ -281,7 +283,7 @@
         128: 'Three Little Cuties',
         129: 'Handoff',
         130: 'In Fortune',
-        131: 'Cover',
+        131: 'Overcoming Fear',
         132: 'The Bed',
         133: 'Simple Joy',
         134: 'A Perfect Couple',
@@ -366,6 +368,7 @@
         63: '头戴中国龙风格帽子的猫——日式动画绿龙，暗青与金色，流行意象与自由线条。',
         64: '白衣短发女孩低头轻嗅手中的花——玻璃质感，青绿色，浪漫，强调光与色，激进数字插画风格。',
         65: '一只猫在树下，空灵光线与优雅平衡的风格。使用富士 GFX 50R 搭配柯达 Tri-X 400 胶片拍摄。',
+        66: '招财猫扮财神，3D 可爱风格，红金配色，元宝红包福字，新年喜庆氛围。',
         67: '获奖级特写：春日枝头只见粉色的花——雪景风格、中国传统艺术影响、暗白与白、掀顶视角、柔和梦幻。',
         68: '调音师：Risograph 风格印刷，中国艺术与 Maud Lewis 画风，印度男子调钢琴全身像，简练线条，深林绿、锈橙、石灰、泥褐衬白底。',
         69: '猫与百合，宇宙般深色背景——空灵静谧。',
@@ -430,7 +433,7 @@
         128: '两只黑天鹅与三只毛茸茸灰色小天鹅在莲池中——俯拍长焦。',
         129: '一男一女低头玩手机——毕加索风格钢板铁丝画，金色。',
         130: '极简航拍：左半红水右半白水，一人在中间划长船。',
-        131: '西红柿炒鸡蛋。',
+        131: '一只可爱的猫在水下嬉戏、追逐水母，从水下视角捕捉，越过恐惧的主题。',
         132: '毕翠克丝·波特风格：兔妈妈和兔宝宝在床上读童话，碎花睡衣。',
         133: '狗狗们开心地躺在一起。',
         134: '穿三件套的番茄人与穿婚纱的鸡蛋人的婚礼。',
@@ -502,6 +505,7 @@
         63: '龙猫',
         64: '低头',
         65: '树下',
+        66: '招财猫',
         67: '粉色的花',
         68: '调音师',
         69: '一眼万万年',
@@ -566,7 +570,7 @@
         128: '三只小可爱',
         129: '接头',
         130: '在福',
-        131: '封面',
+        131: '越过恐惧',
         132: '床',
         133: '简单的快乐',
         134: '一对璧人',
@@ -903,7 +907,7 @@
       featured: false,
       image: 'static/assets/midjourney/yuxin_jin_nalog_photography_in_lo-fi_style_A_Maine_Coon_stands__75dd125c-9ecd-4adb-9e44-dcd4ba127697.png',
       date: '2024.01.30',
-      prompt: 'nalog photography in lo-fi style, A Maine Coon stands on top of a tall wardrobe facing the camera, Chinese room decoration, sunlit window sill, close-up, afternoon, soft and diffused natural light, upward angle, overhead, desaturated tones, soft focus, simple composition, --ar 2:3 --style raw --v 6',
+      prompt: 'analog photography in lo-fi style, A Maine Coon stands on top of a tall wardrobe facing the camera, Chinese room decoration, sunlit window sill, close-up, afternoon, soft and diffused natural light, upward angle, overhead, desaturated tones, soft focus, simple composition, --ar 2:3 --style raw --v 6',
       params: { version: 'V6', aspect: '2:3', style: 'Raw · Lo-fi Analog' },
     },
     {
@@ -1173,8 +1177,8 @@
       featured: true,
       image: 'static/assets/midjourney/yuxin_jin_a_cat_e4962c68-6083-4cd9-a631-41dc4be2cc19.png',
       date: '2024.04.01',
-      prompt: 'a cat.',
-      params: { version: 'V6' },
+      prompt: 'a cat. --ar 1:1 --v 6',
+      params: { version: 'V6', aspect: '1:1' },
     },
     {
       id: 47,
@@ -1193,8 +1197,8 @@
       featured: false,
       image: 'static/assets/midjourney/yuxin_jin_a_cat_2becbcd2-faa0-40b0-be6c-f4a2611b8b93.png',
       date: '2024.04.01',
-      prompt: 'a cat.',
-      params: { version: 'V6' },
+      prompt: 'a cat. --ar 1:1 --v 6',
+      params: { version: 'V6', aspect: '1:1' },
     },
     {
       id: 49,
@@ -1213,7 +1217,7 @@
       featured: false,
       image: 'static/assets/midjourney/yuxin_jin_Pre-war_meeting_of_the_cats_which_was_crowded_and_ten_d3c89d2d-6f40-4fe6-8753-74d044c61653.png',
       date: '2024.04.01',
-      prompt: 'Pre-war meeting of the cats, which was crowded and tense, Ciematic lighting, black and white sketch, Dadaism, high detail --ar 4:3 --v 6.0',
+      prompt: 'Pre-war meeting of the cats, which was crowded and tense, cinematic lighting, black and white sketch, Dadaism, high detail --ar 4:3 --v 6.0',
       params: { version: 'V6.0', aspect: '4:3', style: 'Dadaism · B&W Sketch' },
     },
     {
@@ -1367,6 +1371,16 @@
       params: { version: 'Niji 6', aspect: '7:3', stylize: '1000', style: 'Digital illustration · Glass' },
     },
     {
+      id: 66,
+      articleId: 14,
+      order: 65,
+      featured: false,
+      image: 'static/assets/midjourney/Chinese_god_of_wealth_Lynx_cat_66.png',
+      date: '2024.02.20',
+      prompt: 'Chinese god of wealth, god of wealth and a Lynx cat, 3D render, cute Maneki-neko style, red and gold, festive, gold ingots, red envelopes, Fú character, soft lighting --ar 2:3 --v 6',
+      params: { version: 'V6', aspect: '2:3', style: 'God of Wealth · Maneki-neko' },
+    },
+    {
       id: 67,
       articleId: 14,
       order: 66,
@@ -1463,8 +1477,8 @@
       featured: true,
       image: 'static/assets/midjourney/yuxin_jin_close-up_heavy_snow_day_A_vast_Beijing_city_landscape_9e56846c-b7c6-4540-9158-4bda0f342e97.png',
       date: '2024.03.06',
-      prompt: 'close-up, heavy snow day, A vast Beijing city landscape in grayscale. The scene is punctuated by a single, a cat is flying in the sky, creating a sharp contrast --ar 16:9',
-      params: { aspect: '16:9', style: 'Photorealistic · Grayscale' },
+      prompt: 'close-up, heavy snow day, A vast Beijing city landscape in grayscale. The scene is punctuated by a single, a cat is flying in the sky, creating a sharp contrast --ar 16:9 --v 6',
+      params: { version: 'V6', aspect: '16:9', style: 'Photorealistic · Grayscale' },
     },
     {
       id: 77,
@@ -1473,8 +1487,8 @@
       featured: false,
       image: 'static/assets/midjourney/A photorealistic image of a glass window on a rainy, foggy day. The window is covered with water droplets. In the center, flower shape is drawn in a simple manner. The shape appears as if it is.png',
       date: '2024.03.06',
-      prompt: 'A photorealistic image of a glass window on a rainy, foggy day. The window is covered with water droplets. In the center, flower shape is drawn in a simple manner. The shape appears as if it is dripping water drops naturally, enhancing the realistic, natural feel of a rainy day. The background behind the glass shows the blurry, rainy scenery, contributing to the overall mood of the image. The rainy and foggy background enhances the realistic feel of a rainy day. --ar 32:31',
-      params: { aspect: '32:31', style: 'Photorealistic' },
+      prompt: 'A photorealistic image of a glass window on a rainy, foggy day. The window is covered with water droplets. In the center, flower shape is drawn in a simple manner. The shape appears as if it is dripping water drops naturally, enhancing the realistic, natural feel of a rainy day. The background behind the glass shows the blurry, rainy scenery, contributing to the overall mood of the image. The rainy and foggy background enhances the realistic feel of a rainy day. --ar 32:31 --v 6',
+      params: { version: 'V6', aspect: '32:31', style: 'Photorealistic' },
     },
     {
       id: 78,
@@ -1483,8 +1497,8 @@
       featured: false,
       image: 'static/assets/midjourney/Chinese dragon with golden eyes, full-body, ethereal, Chinese epic style, turning in the sea, lightning and thunder, smoke,Chinese dragons, ethereal and hazy, white background, no watermark --a.png',
       date: '2024.03.06',
-      prompt: 'Chinese dragon with golden eyes, full-body, ethereal, Chinese epic style, turning in the sea, lightning and thunder, smoke, Chinese dragons, ethereal and hazy, white background, no watermark --ar 3:4 --stylize 1000',
-      params: { aspect: '3:4', stylize: '1000', style: 'Chinese epic' },
+      prompt: 'Chinese dragon with golden eyes, full-body, ethereal, Chinese epic style, turning in the sea, lightning and thunder, smoke, Chinese dragons, ethereal and hazy, white background, no watermark --ar 3:4 --stylize 1000 --v 6',
+      params: { version: 'V6', aspect: '3:4', stylize: '1000', style: 'Chinese epic' },
     },
     {
       id: 79,
@@ -1493,8 +1507,8 @@
       featured: false,
       image: 'static/assets/midjourney/yuxin_jin_close-up_heavy_snow_day_A_vast_Beijing_city_landscape_7453d05d-f9a0-4b79-b7c2-61d5c25f318e.png',
       date: '2024.03.06',
-      prompt: 'close-up, heavy snow day, A vast Beijing city landscape in grayscale. The scene is punctuated by a single, a cat is flying in the sky, creating a sharp contrast --ar 16:9',
-      params: { aspect: '16:9', style: 'Photorealistic · Grayscale' },
+      prompt: 'close-up, heavy snow day, A vast Beijing city landscape in grayscale. The scene is punctuated by a single, a cat is flying in the sky, creating a sharp contrast --ar 16:9 --v 6',
+      params: { version: 'V6', aspect: '16:9', style: 'Photorealistic · Grayscale' },
     },
     {
       id: 80,
@@ -1503,8 +1517,8 @@
       featured: false,
       image: 'static/assets/midjourney/yuxin_jin_full_body_portrait_of_womens_red_cheongsam_dress_in_t_0eb02acc-0f8f-4a68-8703-66d34def679a.png',
       date: '2024.03.06',
-      prompt: 'full body portrait of women\'s red cheongsam dress, in the style of street style realism, monochromatic color scheme, monochromatic compositions, aurorapunk, mori kei, decadent beauty, golden age aesthetics --ar 35:47 --style raw',
-      params: { version: 'Raw', aspect: '35:47', style: 'Street realism · Mori kei' },
+      prompt: 'full body portrait of women\'s red cheongsam dress, in the style of street style realism, monochromatic color scheme, monochromatic compositions, aurorapunk, mori kei, decadent beauty, golden age aesthetics --ar 35:47 --style raw --v 6',
+      params: { version: 'V6', aspect: '35:47', style: 'Street realism · Mori kei' },
     },
     {
       id: 81,
@@ -1523,8 +1537,8 @@
       featured: false,
       image: 'static/assets/midjourney/Coconut Flavored Eggroll Roll Popcorn, cute style, petros afshar, dtraditional animation, graffiti, studyplace, white background --ar 34.png',
       date: '2024.03.10',
-      prompt: 'Coconut Flavored Eggroll Roll Popcorn, cute style, petros afshar, dtraditional animation, graffiti, studyplace, white background --ar 3:4',
-      params: { aspect: '3:4', style: 'Petros Afshar · Cute' },
+      prompt: 'Coconut Flavored Eggroll Roll Popcorn, cute style, petros afshar, traditional animation, graffiti, studyplace, white background --ar 3:4 --v 6',
+      params: { version: 'V6', aspect: '3:4', style: 'Petros Afshar · Cute' },
     },
     {
       id: 83,
@@ -1583,8 +1597,8 @@
       featured: false,
       image: 'static/assets/midjourney/yuxin_jin_Create_a_three-panel_realistic_comic_book_page._The_6419fa60-6de6-4fb0-bbab-25a1ae6b88b0_1.png',
       date: '2024.04.02',
-      prompt: 'Create a three-panel realistic comic book page. The first panel should depict A scene of a couple happy together. The second panel needs to show The boy himself kills the girl who is smiling at him. The third panel illustrates a refreshing moment of The boy was on his knees, the dead girl lying on his lap, and he prayed devoutly that she would go to heaven --ar 16:9',
-      params: { aspect: '16:9', style: 'Realistic Comic' },
+      prompt: 'Create a three-panel realistic comic book page. The first panel should depict A scene of a couple happy together. The second panel needs to show The boy himself kills the girl who is smiling at him. The third panel illustrates a refreshing moment of The boy was on his knees, the dead girl lying on his lap, and he prayed devoutly that she would go to heaven --ar 16:9 --v 6',
+      params: { version: 'V6', aspect: '16:9', style: 'Realistic Comic' },
     },
     {
       id: 89,
@@ -1593,8 +1607,8 @@
       featured: false,
       image: 'static/assets/midjourney/yuxin_jin_a_painting_of_a_boy_with_a_dead_heart_in_the_style_of_1b1d853b-ad74-444a-a0ca-deaff391f732.png',
       date: '2024.04.02',
-      prompt: 'a painting of a boy with a dead heart, in the style of traditional chinese landscape, misty gothic, plush doll art, luminous reflections, colorized, children\'s book illustrations, serene faces',
-      params: { style: 'Traditional Chinese · Gothic' },
+      prompt: 'a painting of a boy with a dead heart, in the style of traditional chinese landscape, misty gothic, plush doll art, luminous reflections, colorized, children\'s book illustrations, serene faces --ar 4:5 --v 6',
+      params: { version: 'V6', aspect: '4:5', style: 'Traditional Chinese · Gothic' },
     },
     {
       id: 90,
@@ -2020,8 +2034,8 @@
       featured: true,
       image: 'static/assets/midjourney/微信图片_2026-03-05_202814_261.png',
       date: '2024.10.03',
-      prompt: '',
-      params: { version: 'V6.1', style: 'Cover' },
+      prompt: 'Cute cat is playing in water and chasing a jellyfish, captured from under water. --ar 6:5 --v 6.1 --stylize 400',
+      params: { version: 'V6.1', aspect: '6:5', stylize: '400', style: 'Underwater' },
     },
     {
       id: 132,
@@ -2065,26 +2079,25 @@
     },
   ];
 
-  // ===== Likes (localStorage) =====
-  var LIKES_KEY = 'mj-likes';
+  // ===== Likes：全局统计（Firebase）+ 本机「已赞」状态（localStorage） =====
   var LIKED_KEY = 'mj-liked';
-
-  function getLikes() {
-    try { return JSON.parse(localStorage.getItem(LIKES_KEY)) || {}; }
-    catch (e) { return {}; }
-  }
-
-  function setLike(id) {
-    var likes = getLikes();
-    likes[id] = (likes[id] || 0) + 1;
-    localStorage.setItem(LIKES_KEY, JSON.stringify(likes));
-    return likes[id];
-  }
-
-  function getLikeCount(id) {
-    return getLikes()[id] || 0;
-  }
-
+  /** 全局点赞数（来自 Firebase），格式 { "1": 5, "2": 3 }。未配置 Firebase 时为空对象，回退到仅本机。 */
+  var globalLikes = {};
+  /**
+   * 启用全局点赞统计时在此填写 Firebase 配置（从 Firebase 控制台 → 项目设置 → 您的应用 复制）。
+   * 留空则仅使用本机 localStorage，不统计跨用户。
+   * 需在 Firebase 控制台创建 Realtime Database，规则示例：".read": true, ".write": true（测试用）。
+   */
+  var FIREBASE_CONFIG = {
+    apiKey: "AIzaSyBNlmEtDGjwW5pNMRmiIuoeC4WEk3XW6hk",
+    authDomain: "yuxinjin-gallery.firebaseapp.com",
+    projectId: "yuxinjin-gallery",
+    storageBucket: "yuxinjin-gallery.firebasestorage.app",
+    messagingSenderId: "657153159460",
+    appId: "1:657153159460:web:4e7399ff13ca70f9a8c3b1",
+    measurementId: "G-M9JWSVG729",
+    databaseURL:"https://yuxinjin-gallery-default-rtdb.firebaseio.com"
+  };
   function getLikedList() {
     try { return JSON.parse(localStorage.getItem(LIKED_KEY) || '[]'); }
     catch (e) { return []; }
@@ -2094,23 +2107,90 @@
     return getLikedList().indexOf(id) !== -1;
   }
 
+  /** 展示用的点赞数：有 Firebase 用全局，否则用本机（旧逻辑兼容）。 */
+  function getLikeCount(id) {
+    if (typeof globalLikes[id] === 'number') return globalLikes[id];
+    try {
+      var local = JSON.parse(localStorage.getItem('mj-likes') || '{}');
+      return local[id] || 0;
+    } catch (e) { return 0; }
+  }
+
+  function initFirebaseLikes(done) {
+    if (!FIREBASE_CONFIG || !window.firebase) {
+      if (typeof done === 'function') done();
+      return;
+    }
+    try {
+      if (!window.firebase.apps || !window.firebase.apps.length) {
+        window.firebase.initializeApp(FIREBASE_CONFIG);
+      }
+      var db = window.firebase.database();
+      var ref = db.ref('likes');
+      ref.once('value', function (snap) {
+        var val = snap.val();
+        if (val && typeof val === 'object') {
+          for (var k in val) if (Object.prototype.hasOwnProperty.call(val, k)) globalLikes[k] = val[k];
+        }
+        if (typeof done === 'function') done();
+      }, function () {
+        if (typeof done === 'function') done();
+      });
+    } catch (e) {
+      if (typeof done === 'function') done();
+    }
+  }
+
+  function incrementFirebaseLike(id, callback) {
+    if (!FIREBASE_CONFIG || !window.firebase) {
+      if (typeof callback === 'function') callback(0);
+      return;
+    }
+    try {
+      var db = window.firebase.database();
+      var ref = db.ref('likes/' + id);
+      ref.transaction(function (n) { return (n || 0) + 1; }, function (err, committed, snap) {
+        var count = (snap && snap.val()) || 0;
+        globalLikes[id] = count;
+        if (typeof callback === 'function') callback(count);
+      });
+    } catch (e) {
+      if (typeof callback === 'function') callback(getLikeCount(id));
+    }
+  }
+
   function toggleLike(id) {
-    var likes = getLikes();
     var liked = getLikedList();
     var idx = liked.indexOf(id);
     var nowLiked;
     if (idx === -1) {
       liked.push(id);
-      likes[id] = (likes[id] || 0) + 1;
       nowLiked = true;
+      if (FIREBASE_CONFIG && window.firebase) {
+        incrementFirebaseLike(id, function (count) { syncLikeButtons(id, true, count); });
+        globalLikes[id] = (globalLikes[id] || 0) + 1;
+      } else {
+        var local = {};
+        try { local = JSON.parse(localStorage.getItem('mj-likes') || '{}'); } catch (e) {}
+        local[id] = (local[id] || 0) + 1;
+        globalLikes[id] = local[id];
+        try { localStorage.setItem('mj-likes', JSON.stringify(local)); } catch (e) {}
+      }
+      try { localStorage.setItem(LIKED_KEY, JSON.stringify(liked)); } catch (e) {}
+      return { liked: true, count: getLikeCount(id) };
     } else {
       liked.splice(idx, 1);
-      likes[id] = Math.max((likes[id] || 0) - 1, 0);
       nowLiked = false;
+      if (!FIREBASE_CONFIG || !window.firebase) {
+        var local = {};
+        try { local = JSON.parse(localStorage.getItem('mj-likes') || '{}'); } catch (e) {}
+        local[id] = Math.max((local[id] || 0) - 1, 0);
+        globalLikes[id] = local[id];
+        try { localStorage.setItem('mj-likes', JSON.stringify(local)); } catch (e) {}
+      }
+      try { localStorage.setItem(LIKED_KEY, JSON.stringify(liked)); } catch (e) {}
+      return { liked: false, count: getLikeCount(id) };
     }
-    localStorage.setItem(LIKED_KEY, JSON.stringify(liked));
-    localStorage.setItem(LIKES_KEY, JSON.stringify(likes));
-    return { liked: nowLiked, count: likes[id] || 0 };
   }
 
   function syncLikeButtons(id, liked, count) {
@@ -2215,7 +2295,7 @@
         var art = artworks.find(function (a) { return a.id === id; });
         if (!art) return '';
         return '<button type="button" class="rec-thumb" data-id="' + id + '" title="' + (i18n[lang].titles[id] || '') + '">' +
-          '<img src="' + art.image + '" alt="">' +
+          '<img src="' + getThumb(art.image) + '" alt="">' +
           '</button>';
       }).join('');
     holder.querySelectorAll('.rec-thumb').forEach(function (btn) {
@@ -2326,7 +2406,13 @@
   function getSorted() {
     var arr = artworks.slice();
     if (sortMode === 'curated') {
-      arr.sort(function (a, b) { return a.order - b.order; });
+      // 混合算法：以手动 order 为主，同 order 时按点赞数降序，再按日期稳定
+      arr.sort(function (a, b) {
+        if (a.order !== b.order) return a.order - b.order;
+        var likesA = getLikeCount(a.id), likesB = getLikeCount(b.id);
+        if (likesA !== likesB) return likesB - likesA;
+        return (b.date || '').localeCompare(a.date || '') || a.id - b.id;
+      });
     } else if (sortMode === 'newest') {
       arr.sort(function (a, b) { return b.date.localeCompare(a.date) || b.id - a.id; });
     } else if (sortMode === 'liked') {
@@ -2356,6 +2442,12 @@
     return 3;
   }
 
+  /** 由原图路径得到缩略图路径：static/assets/midjourney/foo.png -> .../midjourney/thumbs/foo.png */
+  function getThumb(fullSrc) {
+    if (!fullSrc || fullSrc.indexOf('midjourney/') === -1) return fullSrc;
+    return fullSrc.replace('midjourney/', 'midjourney/thumbs/');
+  }
+
   function renderGallery() {
     var sorted = getSorted();
     var cols = getGalleryColumns();
@@ -2370,10 +2462,10 @@
       var imgWrapHtml;
       if (isMulti) {
         imgWrapHtml = '<div class="card-img-wrap card-multi-wrap">' +
-          imgs.map(function (src) { return '<img src="' + src + '" alt="" loading="lazy">'; }).join('') +
+          imgs.map(function (src) { return '<img src="' + getThumb(src) + '" data-full="' + src + '" alt="" loading="lazy">'; }).join('') +
           '</div>';
       } else {
-        imgWrapHtml = '<div class="card-img-wrap"><img src="' + art.image + '" alt="" loading="lazy"></div>';
+        imgWrapHtml = '<div class="card-img-wrap"><img src="' + getThumb(art.image) + '" data-full="' + art.image + '" alt="" loading="lazy"></div>';
       }
       return '<div class="' + cls + '" data-id="' + art.id + '">' +
         imgWrapHtml +
@@ -2397,6 +2489,10 @@
     galleryEl.innerHTML = colHtml.map(function (arr) {
       return '<div class="gallery-col">' + arr.join('') + '</div>';
     }).join('');
+
+    galleryEl.querySelectorAll('img[data-full]').forEach(function (img) {
+      img.addEventListener('error', function () { this.src = this.getAttribute('data-full') || this.src; });
+    });
 
     galleryEl.querySelectorAll('.card').forEach(function (card) {
       card.addEventListener('click', function (e) {
@@ -2646,6 +2742,6 @@
   });
 
   // ===== Init =====
-  setLang(lang);
+  initFirebaseLikes(function () { setLang(lang); });
 })();
 
