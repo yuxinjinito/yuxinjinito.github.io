@@ -393,7 +393,7 @@ body.light .card:hover .card-title-text {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-left: 6px;
+  margin-left: auto;
   min-width: 0;
   max-width: 100%;
   overflow-x: auto;
@@ -483,14 +483,8 @@ body.light .card:hover .card-title-text {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease, color var(--transition), background var(--transition);
-}
-
-.modal-close.visible {
-  opacity: 0.75;
-  pointer-events: auto;
+  opacity: 1;
+  transition: color var(--transition), background var(--transition);
 }
 
 .modal-close:hover { color: #fff; background: rgba(0, 0, 0, 0.7); }
