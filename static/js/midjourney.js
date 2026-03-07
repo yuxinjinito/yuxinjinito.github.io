@@ -2388,7 +2388,7 @@
 
   // ===== Theme =====
   var themeBtn = document.getElementById('theme-toggle');
-  var savedTheme = localStorage.getItem('mj-theme') || 'dark';
+  var savedTheme = localStorage.getItem('mj-theme') || 'light';
 
   function applyTheme(theme) {
     savedTheme = theme;
