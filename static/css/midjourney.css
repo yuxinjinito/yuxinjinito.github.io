@@ -387,8 +387,6 @@ body.light .card:hover .card-title-text {
   gap: 12px;
   align-items: center;
   flex-wrap: wrap;
-  flex: 1;
-  min-width: 0;
 }
 
 .recommend-inline {
@@ -398,11 +396,10 @@ body.light .card:hover .card-title-text {
   margin-left: 6px;
   min-width: 0;
   max-width: 100%;
-  flex: 1;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding-right: 0;
+  padding-right: 8px;
 }
 .recommend-inline::-webkit-scrollbar { display: none; }
 
@@ -457,10 +454,11 @@ body.light .card:hover .card-title-text {
 }
 
 .modal {
+  position: relative;
   width: 100%;
   max-width: 880px;
   margin: 48px auto;
-  padding: 60px 32px 80px;
+  padding: 56px 32px 80px;
   transform: translateY(24px);
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -470,10 +468,10 @@ body.light .card:hover .card-title-text {
 }
 
 .modal-close {
-  position: fixed;
+  position: absolute;
   top: 16px;
-  right: 20px;
-  z-index: 10001;
+  right: 32px;
+  z-index: 10;
   width: 40px;
   height: 40px;
   border: none;
@@ -485,7 +483,14 @@ body.light .card:hover .card-title-text {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color var(--transition), background var(--transition);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, color var(--transition), background var(--transition);
+}
+
+.modal-close.visible {
+  opacity: 0.75;
+  pointer-events: auto;
 }
 
 .modal-close:hover { color: #fff; background: rgba(0, 0, 0, 0.7); }
@@ -985,7 +990,8 @@ body.light .modal-close:hover {
   .card-sm { padding: 0 15%; }
   .site-header { padding: 100px 16px 20px; }
   .site-header h1 { font-size: 2.2rem; letter-spacing: 6px; }
-  .modal { padding: 60px 16px 60px; margin: 32px auto; }
+  .modal { padding: 56px 16px 60px; margin: 32px auto; }
+  .modal-close { right: 16px; }
   .modal-title { font-size: 1.5rem; }
   .top-bar { padding: 0 16px; }
 }

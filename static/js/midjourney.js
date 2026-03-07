@@ -302,7 +302,7 @@
         139: 'Under the Shrine',
         140: 'Cheongsam II',
         141: 'Gallop',
-        142: 'A girl II',
+        142: 'A Girl II',
       },
     },
     zh: {
@@ -537,7 +537,7 @@
         71: '准备战斗 II',
         72: '利兹与青鸟',
         73: '云花',
-        74: ' girl',
+        74: 'A girl',
         76: '风',
         77: '雨天',
         78: '龙王',
@@ -604,7 +604,7 @@
         139: '在神社下',
         140: '旗袍II',
         141: '奔驰',
-        142: 'A girl II',
+        142: 'A Girl II',
       },
     },
   };
@@ -2129,7 +2129,7 @@
       id: 138,
       order: 87.5,
       featured: false,
-      image: 'static/assets/midjourney/Cyberbullying_Effects_Poster_ar16_9_raw_v6.png',
+      image: 'static/assets/midjourney/Cyberbullying_Effects_Poster_Illustration_ar16_9_raw_v6.png',
       date: '2024.04.08',
       prompt: 'A poster illustration of the effects of cyberbullying on teenagers, black background, a teenager faces the camera and smiles as he sits in front of his computer, which reveals a green light in the middle of the night. in the style of tenebrism, Caravaggio, Artemisia Gentileschi, dark cyan and amber, romantic academia, chiaroscuro mastery, joyful and optimistic, cartoon violence, brutalist, award-winning ar16:9 raw v6',
       params: { version: 'V6', aspect: '16:9', style: 'Raw' },
@@ -2169,7 +2169,7 @@
       date: '2024.03.14',
       prompt: 'Cool girl, Wasteland Style Dress --ar 16:9 --niji 6',
       params: { version: 'Niji 6', aspect: '16:9', style: 'Wasteland' },
-    },
+a    },
   ];
 
   // ===== Likes：全局统计（Firebase）+ 本机「已赞」状态（localStorage） =====
@@ -2372,30 +2372,42 @@
   }
 
   function getRecommendations(currentId, count) {
+    var n = count || 4;
     var forceId = (currentId === 136 ? 99 : currentId === 99 ? 136 : null);
-    var base = getArtworkTags(currentId);
-    if (!base.length) return forceId ? [forceId] : [];
-    var baseSet = {};
-    base.forEach(function (t) { baseSet[t] = true; });
     var currentArt = artworks.find(function (x) { return x.id === currentId; });
     var currentArticleId = currentArt ? currentArt.articleId : null;
+    var base = getArtworkTags(currentId);
+    var baseSet = {};
+    base.forEach(function (t) { baseSet[t] = true; });
 
-    var scored = artworks.filter(function (a) { return a.id !== currentId; }).map(function (a) {
-      var tags = getArtworkTags(a.id);
-      if (!tags.length) return { id: a.id, score: 0 };
-      var inter = 0;
-      tags.forEach(function (t) { if (baseSet[t]) inter++; });
-      var union = Object.keys(baseSet).length;
-      tags.forEach(function (t) { if (!baseSet[t]) union++; });
-      var score = union ? (inter / union) : 0;
-      if (currentArticleId && a.articleId === currentArticleId) score += 0.02;
-      return { id: a.id, score: score };
-    }).filter(function (x) { return x.score > 0; });
+    var scored = base.length
+      ? artworks.filter(function (a) { return a.id !== currentId; }).map(function (a) {
+          var tags = getArtworkTags(a.id);
+          if (!tags.length) return { id: a.id, score: 0 };
+          var inter = 0;
+          tags.forEach(function (t) { if (baseSet[t]) inter++; });
+          var union = Object.keys(baseSet).length;
+          tags.forEach(function (t) { if (!baseSet[t]) union++; });
+          var score = union ? (inter / union) : 0;
+          if (currentArticleId && a.articleId === currentArticleId) score += 0.02;
+          return { id: a.id, score: score };
+        }).filter(function (x) { return x.score > 0; })
+      : [];
 
     scored.sort(function (a, b) { return b.score - a.score; });
-    var recIds = scored.slice(0, count || 4).map(function (x) { return x.id; });
+    var recIds = scored.slice(0, n).map(function (x) { return x.id; });
     if (forceId) {
-      recIds = [forceId].concat(recIds.filter(function (id) { return id !== forceId; })).slice(0, count || 4);
+      recIds = [forceId].concat(recIds.filter(function (id) { return id !== forceId; })).slice(0, n);
+    }
+    if (recIds.length < n && currentArt) {
+      var fallback = artworks.filter(function (a) { return a.id !== currentId && recIds.indexOf(a.id) === -1; });
+      if (currentArticleId != null) {
+        var sameArticle = fallback.filter(function (a) { return a.articleId === currentArticleId; });
+        sameArticle.sort(function (a, b) { return Math.abs(a.order - currentArt.order) - Math.abs(b.order - currentArt.order); });
+        fallback = sameArticle.concat(fallback.filter(function (a) { return a.articleId !== currentArticleId; }));
+      }
+      fallback.sort(function (a, b) { return Math.abs(a.order - currentArt.order) - Math.abs(b.order - currentArt.order); });
+      for (var i = 0; i < fallback.length && recIds.length < n; i++) recIds.push(fallback[i].id);
     }
     return recIds;
   }
@@ -2454,6 +2466,7 @@
   var overlay = document.getElementById('modal-overlay');
   var modal = overlay.querySelector('.modal');
   var closeBtn = overlay.querySelector('.modal-close');
+  var closeBtnHideTimeout = null;
   var headerTitle = document.getElementById('header-title');
   var headerSub = document.getElementById('header-sub');
   var headerEpigraph = document.getElementById('header-epigraph');
@@ -2717,7 +2730,8 @@
     } else {
       imageBlock = '<img class="modal-image" src="' + art.image + '" alt="">';
     }
-    modal.innerHTML =
+    var modalInner = modal.querySelector('.modal-inner');
+    if (modalInner) modalInner.innerHTML =
       imageBlock +
       '<div class="modal-content">' +
         '<div class="modal-header">' +
@@ -2795,9 +2809,11 @@
     overlay.classList.add('open');
     document.body.style.overflow = 'hidden';
     overlay.dataset.scrollY = scrollY;
+    closeBtn.classList.remove('visible');
   }
 
   function closeModal() {
+    if (closeBtnHideTimeout) { clearTimeout(closeBtnHideTimeout); closeBtnHideTimeout = null; }
     var scrollY = overlay.dataset.scrollY != null ? parseInt(overlay.dataset.scrollY, 10) : 0;
     overlay.classList.remove('open');
     document.body.style.overflow = '';
@@ -2818,6 +2834,29 @@
   overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+  });
+
+  function onModalScroll() {
+    if (!overlay.classList.contains('open')) return;
+    closeBtn.classList.add('visible');
+    if (closeBtnHideTimeout) clearTimeout(closeBtnHideTimeout);
+    closeBtnHideTimeout = setTimeout(function () {
+      closeBtn.classList.remove('visible');
+      closeBtnHideTimeout = null;
+    }, 1800);
+  }
+  overlay.addEventListener('scroll', onModalScroll, { passive: true });
+  overlay.addEventListener('touchmove', onModalScroll, { passive: true });
+  closeBtn.addEventListener('mouseenter', function () {
+    if (closeBtnHideTimeout) { clearTimeout(closeBtnHideTimeout); closeBtnHideTimeout = null; }
+    closeBtn.classList.add('visible');
+  });
+  closeBtn.addEventListener('mouseleave', function () {
+    if (!overlay.classList.contains('open')) return;
+    closeBtnHideTimeout = setTimeout(function () {
+      closeBtn.classList.remove('visible');
+      closeBtnHideTimeout = null;
+    }, 1800);
   });
 
   // ===== Share Popup =====
