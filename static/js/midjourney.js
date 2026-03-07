@@ -6,6 +6,7 @@
     en: {
       title: 'Gallery',
       subtitle: 'AI-generated artworks with Midjourney',
+      epigraph: 'The Work of Art in the Age of Mechanical Reproduction',
       prompt: 'Prompt',
       copy: 'Copy',
       copied: 'Copied',
@@ -146,7 +147,7 @@
         128: 'Two black swans and three gray cygnets in a lotus pond.',
         129: 'A man and a woman typing on phones — Picasso-style canvas of steel plates and iron wire, gold.',
         130: 'Minimalist aerial view: red water left, white water right, one man rowing between.',
-        131: 'A cute cat playing underwater, chasing a jellyfish — captured from below the surface, theme of overcoming fear.',
+        131: 'A cute cat playing underwater, chasing a jellyfish — captured from below the surface.',
         132: 'Beatrix Potter–style: mother rabbit reading a fairy tale to baby rabbit in bed, flower-patterned pajamas.',
         133: 'Dogs lying happily together.',
         134: 'Framed photo: wedding of humanoid tomato in suit and humanoid egg in wedding dress.',
@@ -293,6 +294,7 @@
     zh: {
       title: '画 廊',
       subtitle: 'Midjourney AI 艺术作品',
+      epigraph: '机械复制时代的艺术作品',
       prompt: '提示词',
       copy: '复制',
       copied: '已复制',
@@ -433,7 +435,7 @@
         128: '两只黑天鹅与三只毛茸茸灰色小天鹅在莲池中——俯拍长焦。',
         129: '一男一女低头玩手机——毕加索风格钢板铁丝画，金色。',
         130: '极简航拍：左半红水右半白水，一人在中间划长船。',
-        131: '一只可爱的猫在水下嬉戏、追逐水母，从水下视角捕捉，越过恐惧的主题。',
+        131: '一只可爱的猫在水下嬉戏、追逐水母，从水下视角捕捉。',
         132: '毕翠克丝·波特风格：兔妈妈和兔宝宝在床上读童话，碎花睡衣。',
         133: '狗狗们开心地躺在一起。',
         134: '穿三件套的番茄人与穿婚纱的鸡蛋人的婚礼。',
@@ -2159,6 +2161,24 @@
     }
   }
 
+  function decrementFirebaseLike(id, callback) {
+    if (!FIREBASE_CONFIG || !window.firebase) {
+      if (typeof callback === 'function') callback(0);
+      return;
+    }
+    try {
+      var db = window.firebase.database();
+      var ref = db.ref('likes/' + id);
+      ref.transaction(function (n) { return Math.max((n || 0) - 1, 0); }, function (err, committed, snap) {
+        var count = (snap && snap.val()) || 0;
+        globalLikes[id] = count;
+        if (typeof callback === 'function') callback(count);
+      });
+    } catch (e) {
+      if (typeof callback === 'function') callback(getLikeCount(id));
+    }
+  }
+
   function toggleLike(id) {
     var liked = getLikedList();
     var idx = liked.indexOf(id);
@@ -2181,7 +2201,10 @@
     } else {
       liked.splice(idx, 1);
       nowLiked = false;
-      if (!FIREBASE_CONFIG || !window.firebase) {
+      if (FIREBASE_CONFIG && window.firebase) {
+        decrementFirebaseLike(id, function (count) { syncLikeButtons(id, false, count); });
+        globalLikes[id] = Math.max((globalLikes[id] || 0) - 1, 0);
+      } else {
         var local = {};
         try { local = JSON.parse(localStorage.getItem('mj-likes') || '{}'); } catch (e) {}
         local[id] = Math.max((local[id] || 0) - 1, 0);
@@ -2337,6 +2360,7 @@
   var closeBtn = overlay.querySelector('.modal-close');
   var headerTitle = document.getElementById('header-title');
   var headerSub = document.getElementById('header-sub');
+  var headerEpigraph = document.getElementById('header-epigraph');
   var backLink = document.getElementById('back-link');
   var footerText = document.getElementById('footer-text');
   var btnEn = document.getElementById('btn-en');
@@ -2352,6 +2376,7 @@
     var t = i18n[l];
     headerTitle.textContent = t.title;
     headerSub.textContent = t.subtitle;
+    headerEpigraph.textContent = t.epigraph;
     backLink.querySelector('.back-text').textContent = t.back;
     footerText.textContent = t.footer;
     buildSortBar();
@@ -2436,6 +2461,16 @@
     return 'md';
   }
 
+  /** 用于列平衡：卡片预估高度权重，越小越短 */
+  function getCardHeightWeight(id) {
+    var size = getCardSize(id);
+    var art = artworks.find(function (a) { return a.id === id; });
+    var isMulti = art && art.images && art.images.length > 1;
+    if (size === 'sm') return 0.7;
+    if (size === 'lg') return 1.5;
+    return isMulti ? 1.2 : 1;
+  }
+
   function getGalleryColumns() {
     if (typeof window !== 'undefined' && window.matchMedia('(max-width: 520px)').matches) return 1;
     if (typeof window !== 'undefined' && window.matchMedia('(max-width: 900px)').matches) return 2;
@@ -2482,9 +2517,13 @@
       '</div>';
     }
     var colHtml = [];
-    for (var c = 0; c < cols; c++) colHtml[c] = [];
-    sorted.forEach(function (art, idx) {
-      colHtml[idx % cols].push(cardHtml(art));
+    var colHeights = [];
+    for (var c = 0; c < cols; c++) { colHtml[c] = []; colHeights[c] = 0; }
+    sorted.forEach(function (art) {
+      var c = 0;
+      for (var i = 1; i < cols; i++) { if (colHeights[i] < colHeights[c]) c = i; }
+      colHtml[c].push(cardHtml(art));
+      colHeights[c] += getCardHeightWeight(art.id);
     });
     galleryEl.innerHTML = colHtml.map(function (arr) {
       return '<div class="gallery-col">' + arr.join('') + '</div>';

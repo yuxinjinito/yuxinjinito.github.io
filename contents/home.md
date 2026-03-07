@@ -63,7 +63,7 @@ My previous work includes multimodal dataset/benchmark construction and evaluati
 
 * My name is written as **金宇鑫** (*Jīn Yǔxīn*) in Chinese. You can [click here to hear how it is pronounced in Mandarin](https://translate.google.com/?sl=auto&tl=zh-CN&text=%E9%87%91%E5%AE%87%E9%91%AB&op=translate).
 
-* I love photography and painting with Mid-Journey, and I am building a **digtal gallery** showing my artworks!
+* I love photography and painting with Mid-Journey. [Click here](midjourney.html) or click **Gallery** in the menu bar to see my AI artworks. I'm also organizing and preparing to showcase my photography.
 
 * Thanks [Jerry Yin](http://jerrysys.top/) for this website template.
 

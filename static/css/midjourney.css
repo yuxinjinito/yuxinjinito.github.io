@@ -180,6 +180,16 @@ body:not(.light) .theme-toggle .icon-sun { display: none; }
   margin-top: 8px;
 }
 
+.site-header .epigraph {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 14px;
+  letter-spacing: 0.5px;
+}
+
 /* ===== Sort Bar ===== */
 .sort-bar-wrap {
   display: flex;
