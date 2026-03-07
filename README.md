@@ -1,56 +1,48 @@
-# A simple Github Pages template for academic personal website.
+# Yuxin Jin — Personal Site
 
-## Introduction
+Personal academic homepage and gallery, hosted on GitHub Pages.  
+**Based on** the [academic personal website template](https://github.com/JerryYin777/JerryYin777.github.io) by Jerry Yin (Markdown-driven content, Bootstrap).
 
-This is an academic personal website template based on bootstrap. This demo refers to [senli1073](https://github.com/senli1073/senli1073.github.io), thx to Mr.Sen Li's template.
+- **Home**: Bootstrap-based site with sections (Home, Publications, Awards, Service). Content is loaded from Markdown and `contents/config.yml`.
+- **Gallery**: [midjourney.html](midjourney.html) — AI artworks (Midjourney). EN/中文, light/dark theme; default: English, light. Thumbnails live in `static/assets/midjourney/thumbs/`.
 
-This template supports markdown files as input content, and you don't need to build the webpage before deployment. When the webpage is loaded, the markdown files will be automatically parsed and embedded into the page.
+## Structure
 
-Demo: https://jerrysys.top
-
-
-## Getting Start
-### 1. Fork this repository
-The repository name should be `<username>.github.io`, which will also be your website's URL.
-
-
-### 2. Edit page content
-
-(1) Go to the folder where you want to store your project, and clone the new repository:
 ```
-git clone https://github.com/<username>/<username>.github.io.git
-```
-The directory structure is as follows:
-
-```.
 .
-├── contents
-└── static
-    ├── assets
-    │   └── img
-    ├── css
-    └── js
+├── index.html              # Homepage
+├── midjourney.html         # Gallery page
+├── contents/
+│   ├── config.yml         # Site title, copyright, etc. (keys match HTML element ids)
+│   ├── home.md            # Home section (Markdown)
+│   ├── publications.md
+│   ├── awards.md
+│   └── service.md
+├── static/
+│   ├── assets/
+│   │   ├── img/           # Homepage images (e.g. background, photo)
+│   │   └── midjourney/    # Gallery images; thumbs in midjourney/thumbs/
+│   ├── css/
+│   └── js/
+└── scripts/
+    └── generate-thumbs.sh # Regenerate gallery thumbnails (macOS sips; 600/650/800px by source size)
 ```
 
-(2) Edit the content of each section, which corresponds to `contents/*.md`.
+## Editing content
 
-(3) Edit the title, copyright information and other text of the website in `contents/config.yml`
+1. **Homepage text**: Edit `contents/home.md`, `contents/publications.md`, etc. (Markdown).
+2. **Title & footer**: Edit `contents/config.yml` (keys like `title`, `copyright-text`).
+3. **Homepage assets**: Replace images in `static/assets/img/`.
+4. **Gallery**: Add images under `static/assets/midjourney/` and extend `static/js/midjourney.js` (artwork data + i18n). Then run:
+   ```bash
+   ./scripts/generate-thumbs.sh
+   ```
+   to refresh thumbnails.
 
-(4) Replace background image and photo with new ones for your web pages in `static/assets/img`
+## Run locally
 
-(5) Push it: 
-```
-git commit -am 'init'
-git push
-```
-
-
-### 3. Enjoy
-
-Fire up a browser and go to `https://<username>.github.io`
-
-
+Open `index.html` and `midjourney.html` via a local server (e.g. `python3 -m http.server`) so Markdown/config fetch works.
 
 ## License
 
-Copyright 2024, Jerry Yin and controlled via the MIT license, a permissive open-source (free software) license. You can copy and mess with this template.
+This project is under the MIT License. The original template and its license are from [Jerry Yin](https://github.com/JerryYin777/JerryYin777.github.io); attribution is preserved in `contents/config.yml` (footer) and here.
