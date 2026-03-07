@@ -387,6 +387,8 @@ body.light .card:hover .card-title-text {
   gap: 12px;
   align-items: center;
   flex-wrap: wrap;
+  flex: 1;
+  min-width: 0;
 }
 
 .recommend-inline {
@@ -396,10 +398,11 @@ body.light .card:hover .card-title-text {
   margin-left: 6px;
   min-width: 0;
   max-width: 100%;
+  flex: 1;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding-right: 8px;
+  padding-right: 0;
 }
 .recommend-inline::-webkit-scrollbar { display: none; }
 
@@ -457,7 +460,7 @@ body.light .card:hover .card-title-text {
   width: 100%;
   max-width: 880px;
   margin: 48px auto;
-  padding: 0 32px 80px;
+  padding: 60px 32px 80px;
   transform: translateY(24px);
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
@@ -982,7 +985,7 @@ body.light .modal-close:hover {
   .card-sm { padding: 0 15%; }
   .site-header { padding: 100px 16px 20px; }
   .site-header h1 { font-size: 2.2rem; letter-spacing: 6px; }
-  .modal { padding: 0 16px 60px; margin: 32px auto; }
+  .modal { padding: 60px 16px 60px; margin: 32px auto; }
   .modal-title { font-size: 1.5rem; }
   .top-bar { padding: 0 16px; }
 }
