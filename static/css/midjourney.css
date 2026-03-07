@@ -253,13 +253,10 @@ body:not(.light) .theme-toggle .icon-sun { display: none; }
   overflow: hidden;
   background: var(--card-bg);
   border-radius: 2px;
-  aspect-ratio: 4/5;
 }
 
 .card img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
   vertical-align: bottom;
   transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -267,6 +264,12 @@ body:not(.light) .theme-toggle .icon-sun { display: none; }
 
 .card:hover img {
   transform: scale(1.025);
+}
+.card-img-wrap.crop-black img {
+  transform: scale(1.06);
+}
+.card:hover .card-img-wrap.crop-black img {
+  transform: scale(1.086);
 }
 
 .card-lg .card-img-wrap { margin-bottom: 2px; }
@@ -504,6 +507,15 @@ body.light .modal-close:hover {
   border-radius: 2px;
   display: block;
   margin-bottom: 40px;
+}
+.modal-image-wrap.crop-black {
+  overflow: hidden;
+  border-radius: 2px;
+  margin-bottom: 40px;
+}
+.modal-image-wrap.crop-black .modal-image {
+  margin-bottom: 0;
+  transform: scale(1.06);
 }
 
 /* Modal carousel — multi-image same prompt */
@@ -959,12 +971,22 @@ body.light .modal-close:hover {
 
 /* ===== Footer ===== */
 .site-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
   text-align: center;
   padding: 32px 20px;
   font-size: 0.65rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--text-dim);
+}
+.site-footer .footer-copyright {
+  font-size: 0.6rem;
+  letter-spacing: 1.5px;
+  text-transform: none;
+  opacity: 0.85;
 }
 
 /* ===== Responsive ===== */

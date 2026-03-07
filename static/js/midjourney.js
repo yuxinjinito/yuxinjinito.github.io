@@ -12,6 +12,7 @@
       copied: 'Copied',
       back: 'Home',
       footer: 'Yuxin Jin — Midjourney Artworks',
+      copyright: '© 2026 Yuxin Jin. All rights reserved.',
       sortLabel: 'Sort',
       sortOptions: { curated: 'Curated', newest: 'Newest', liked: 'Most Liked' },
       publishedIn: 'Originally published in',
@@ -314,6 +315,7 @@
       copied: '已复制',
       back: '主页',
       footer: 'Yuxin Jin — Midjourney 作品集',
+      copyright: '© 2026 金宇鑫。保留所有权利。',
       sortLabel: '排序',
       sortOptions: { curated: '精选', newest: '最新', liked: '最多赞' },
       publishedIn: '最初发布于',
@@ -2482,6 +2484,7 @@
   var headerEpigraph = document.getElementById('header-epigraph');
   var backLink = document.getElementById('back-link');
   var footerText = document.getElementById('footer-text');
+  var footerCopyright = document.getElementById('footer-copyright');
   var btnEn = document.getElementById('btn-en');
   var btnZh = document.getElementById('btn-zh');
   var sortBar = document.getElementById('sort-bar');
@@ -2498,6 +2501,7 @@
     headerEpigraph.textContent = t.epigraph;
     backLink.querySelector('.back-text').textContent = t.back;
     footerText.textContent = t.footer;
+    if (footerCopyright) footerCopyright.textContent = t.copyright;
     buildSortBar();
     renderGallery();
   }
@@ -2596,6 +2600,8 @@
     return 3;
   }
 
+  /** 图内带黑边的作品 id，展示时轻微放大裁剪掉黑边（见 .crop-black） */
+  var cropBlackBordersIds = [97];
   /** 由原图路径得到缩略图路径：static/assets/midjourney/foo.png -> .../midjourney/thumbs/foo.png */
   function getThumb(fullSrc) {
     if (!fullSrc || fullSrc.indexOf('midjourney/') === -1) return fullSrc;
@@ -2619,7 +2625,8 @@
           imgs.map(function (src) { return '<img src="' + getThumb(src) + '" data-full="' + src + '" alt="" loading="lazy">'; }).join('') +
           '</div>';
       } else {
-        imgWrapHtml = '<div class="card-img-wrap"><img src="' + getThumb(art.image) + '" data-full="' + art.image + '" alt="" loading="lazy"></div>';
+        var wrapCls = 'card-img-wrap' + (cropBlackBordersIds.indexOf(art.id) !== -1 ? ' crop-black' : '');
+        imgWrapHtml = '<div class="' + wrapCls + '"><img src="' + getThumb(art.image) + '" data-full="' + art.image + '" alt="" loading="lazy"></div>';
       }
       return '<div class="' + cls + '" data-id="' + art.id + '">' +
         imgWrapHtml +
@@ -2738,7 +2745,11 @@
         '</div>' +
       '</div>';
     } else {
-      imageBlock = '<img class="modal-image" src="' + art.image + '" alt="">';
+      if (cropBlackBordersIds.indexOf(id) !== -1) {
+        imageBlock = '<div class="modal-image-wrap crop-black"><img class="modal-image" src="' + art.image + '" alt=""></div>';
+      } else {
+        imageBlock = '<img class="modal-image" src="' + art.image + '" alt="">';
+      }
     }
     var modalInner = modal.querySelector('.modal-inner');
     if (modalInner) modalInner.innerHTML =
