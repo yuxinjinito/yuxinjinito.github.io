@@ -32,7 +32,7 @@ My previous work includes multimodal dataset/benchmark construction and evaluati
 <div style="height:2px;"></div>
 
 2. **Robustness & Security for LLMs**
-    * Adversarial attacks and defenses: literature-driven study of LLM robustness, including paper screening/summarization, figure preparation, and iterative manuscript revision.
+    * Adversarial attacks and defenses: literature-driven study of LLM robustness, including paper screening/summarization, figure preparation, and iterative manuscript revision. See the [paper](https://ieeexplore.ieee.org/abstract/document/11325628).
 
 <div style="height:2px;"></div>
 
