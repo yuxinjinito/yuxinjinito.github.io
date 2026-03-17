@@ -22,7 +22,7 @@ In Dec 2024, I joined Research Group of [Haochen Xue](https://scholar.xjtlu.edu.
 
 #### Research Interests
 
-I am broadly interested in foundation models, (<strong style="color:blue;">especially DMs and multimodal LLMs</strong>), and how to make them reliable and efficient in real-world, long-horizon interactive settings. 
+I am broadly interested in foundation models, (<strong style="color:blue;">especially MLLMs and DMs</strong>), and how to make them reliable and efficient in real-world interactive settings. 
 
 My previous work includes multimodal dataset/benchmark construction and evaluation, literature-based studies on LLM robustness, and AI-focused writing for a clinical ultrasound review, this includes:
 
@@ -37,7 +37,7 @@ My previous work includes multimodal dataset/benchmark construction and evaluati
 <div style="height:2px;"></div>
 
 3. **Medical AI (Ultrasound)**
-    * AI for musculoskeletal ultrasound: write and synthesize ML/DL methods for ultrasound automation (e.g., segmentation/scoring/longitudinal monitoring) in an interdisciplinary clinical review.
+    * AI for musculoskeletal ultrasound: write and synthesize ML/DL methods for ultrasound automation in an interdisciplinary clinical review.
 
     * Cross-team collaboration: coordinate between professors and clinicians to translate clinical needs into review scope and drive end-to-end manuscript workflow as the student lead.
 
@@ -59,11 +59,11 @@ My previous work includes multimodal dataset/benchmark construction and evaluati
 
 #### Misc
 
-* I'm also a first-year transfer student. Before transferring to UW-Madison, I studied Data Science and Big Data Technology at [Xi'an Jiaotong-Liverpool University](https://www.xjtlu.edu.cn/en/study/departments/school-of-ai-and-advanced-computing) in a top-tier class with a School Academic Special Scholarship.  
+* I'm also a first-year transfer student. Before transferring to UW-Madison, I studied Data Science and Big Data Technology at [Xi'an Jiaotong-Liverpool University](https://www.xjtlu.edu.cn/en/study/departments/school-of-ai-and-advanced-computing) in School of AI and Advanced Computing with a School Academic Special Scholarship.  
 
 * My name is written as **金宇鑫** (*Jīn Yǔxīn*) in Chinese. You can [click here to hear how it is pronounced in Mandarin](https://translate.google.com/?sl=auto&tl=zh-CN&text=%E9%87%91%E5%AE%87%E9%91%AB&op=translate).
 
-* I love photography and painting with Mid-Journey. [Click here](midjourney.html) or click **Gallery** in the menu bar to see my AI artworks. I'm also organizing and preparing to showcase my photography.
+* I love photography and painting with Mid-Journey (An AI-powered generative tool). [Click here](midjourney.html) or click **Gallery** in the menu bar to see my AI artworks.
 
 * Thanks [Jerry Yin](http://jerrysys.top/) for this website template.
 
