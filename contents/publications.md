@@ -1,3 +1,5 @@
+  - **Aligning Prediction Residuals: Representation-Aware Data Selection for Weak-to-Strong Generalization**. Cooper, J.\*, Huang, T.-H.\*, **Jin, Y.\***, Bastian, N. D., Vinayak, R. K., Sala, F. (\* equal contribution). Under review at _International Conference on Learning Representations_ (*ICLR 2027*).
+
   - **AI-Enabled Musculoskeletal Ultrasound for Aromatase Inhibitor–Associated Musculoskeletal Syndrome (AIMSS): Mechanisms, Phenotyping, and Longitudinal Monitoring**. **Jin, Y.**, Zheng, S., Wang, Y., Chang, J., Dong, L. (Manuscript in preparation).
   
-  - **Adversarial Attacks and Defenses on Large Language Models: A Systematic Review**. Li, R., Liu, J., Zhen, J., Bao, Y., Qiang, Y., Xu, Y., Gu, Y., **Jin, Y.** (8th/13), Yu, D., He, Y., Zhou, M., Stefanidis, A., Su, J. (2023).  _8th International Conference on Big Data and Artificial Intelligence_ (*BDAI 2025*). [Paper](https://ieeexplore.ieee.org/abstract/document/11325628).
+  - **Adversarial Attacks and Defenses on Large Language Models: A Systematic Review**. Li, R., Liu, J., Zhen, J., Bao, Y., Qiang, Y., Xu, Y., Gu, Y., **Jin, Y.** (8th/13), Yu, D., He, Y., Zhou, M., Stefanidis, A., Su, J. (2025).  _8th International Conference on Big Data and Artificial Intelligence_ (*BDAI 2025*). [Paper](https://ieeexplore.ieee.org/abstract/document/11325628).

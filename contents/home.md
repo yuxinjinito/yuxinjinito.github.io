@@ -12,9 +12,11 @@
 
 #### Biography
 
-My name is Yuxin Jin. I'm a junior undergraduate student, majoring in [computer sciences](https://www.cs.wisc.edu/) at University of Wisconsin-Madison. 
+My name is Yuxin Jin. I'm a senior undergraduate student, majoring in [computer sciences](https://www.cs.wisc.edu/) at University of Wisconsin-Madison. 
 
-In Sep 2025, I joined [Intelligent Ultrasound Research Center (Chinese)](https://ultrasound.ecnu.edu.cn/) in East China Normal University and conducted research under Prof. [Jiangang Chen](https://faculty.ecnu.edu.cn/_s15/cjg2_en/main.psp/), where I received invaluable mentorship from Renxing Li, for which I am deeply grateful.
+Since May 2026, I have been doing research on weak-to-strong generalization in [Sprocket Lab](https://sprocketlab.github.io/) at UW-Madison under Prof. [Frederic Sala](https://pages.cs.wisc.edu/~fredsala/), where I am fortunate to be mentored by John Cooper.
+
+From Sep 2025 to Apr 2026, I worked with [Intelligent Ultrasound Research Center (Chinese)](https://ultrasound.ecnu.edu.cn/) in East China Normal University under Prof. [Jiangang Chen](https://faculty.ecnu.edu.cn/_s15/cjg2_en/main.psp/), where I received invaluable mentorship from Renxing Li, for which I am deeply grateful.
 
 In Dec 2024, I joined Research Group of [Haochen Xue](https://scholar.xjtlu.edu.cn/en/persons/haochen-xue/) (Ph.D. Candidate), and conducted MLLM-related research under instruction. Two projects I contributed to ultimately resulted in published papers.
 
@@ -22,21 +24,26 @@ In Dec 2024, I joined Research Group of [Haochen Xue](https://scholar.xjtlu.edu.
 
 #### Research Interests
 
-I am broadly interested in foundation models, (<strong style="color:blue;">especially MLLMs and DMs</strong>), and how to make them reliable and efficient in real-world interactive settings. 
+I am broadly interested in <strong style="color:blue;">learning from imperfect supervision</strong>, including weak-to-strong generalization, data-centric methods for training foundation models, and LLM post-training with imperfect reward signals. I am also interested in evaluating the reliability and robustness of foundation models.
 
-My previous work includes multimodal dataset/benchmark construction and evaluation, literature-based studies on LLM robustness, and AI-focused writing for a clinical ultrasound review, this includes:
+My work so far includes:
 
-1. **Multimodal LLMs**
+1. **Weak-to-Strong Generalization**
+    * Data selection for W2S: co-proposed RADS, a representation-aware method that selects the training points whose signal the strong student captures but the weak teacher misses, and ran experiments on 23 datasets. The paper is under review at ICLR 2027.
+
+<div style="height:2px;"></div>
+
+2. **Multimodal LLMs**
     * Evaluation & dataset construction: As part of the team, I participated in constructing and curating a 5,000+ sample multimodal real-world dialogue dataset with manually labeled question types, and assisted with benchmarking and result reporting across 20 MLLMs.
 
 <div style="height:2px;"></div>
 
-2. **Robustness & Security for LLMs**
+3. **Robustness & Security for LLMs**
     * Adversarial attacks and defenses: literature-driven study of LLM robustness, including paper screening/summarization, figure preparation, and iterative manuscript revision. See the [paper](https://ieeexplore.ieee.org/abstract/document/11325628).
 
 <div style="height:2px;"></div>
 
-3. **Medical AI (Ultrasound)**
+4. **Medical AI (Ultrasound)**
     * AI for musculoskeletal ultrasound: write and synthesize ML/DL methods for ultrasound automation in an interdisciplinary clinical review.
 
     * Cross-team collaboration: coordinate between professors and clinicians to translate clinical needs into review scope and drive end-to-end manuscript workflow as the student lead.
@@ -58,8 +65,6 @@ My previous work includes multimodal dataset/benchmark construction and evaluati
 <br>
 
 #### Misc
-
-* I'm also a first-year transfer student. Before transferring to UW-Madison, I studied Data Science and Big Data Technology at [Xi'an Jiaotong-Liverpool University](https://www.xjtlu.edu.cn/en/study/departments/school-of-ai-and-advanced-computing) in School of AI and Advanced Computing with a School Academic Special Scholarship.  
 
 * My name is written as **金宇鑫** (*Jīn Yǔxīn*) in Chinese. You can [click here to hear how it is pronounced in Mandarin](https://translate.google.com/?sl=auto&tl=zh-CN&text=%E9%87%91%E5%AE%87%E9%91%AB&op=translate).
 
