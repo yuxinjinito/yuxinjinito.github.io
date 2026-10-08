@@ -125,6 +125,31 @@ section .main-body{
     cursor: pointer;
 }
 
+/* Center nav links (and the Gallery icon) on the same line as the brand */
+#mainNav .navbar-nav {
+    align-items: center;
+}
+
+#mainNav .navbar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+#mainNav .navbar-nav .nav-link .bi::before {
+    vertical-align: 0;
+}
+
+/* Sub-sections split out of home.md (Biography, Research Interests, ...) */
+#home {
+    padding-bottom: 3rem;
+}
+
+.home-part {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
 /* Tighter vertical spacing between Publications and Awards
    (since the Side Projects section is currently hidden) */
 #publications {
