@@ -18,7 +18,7 @@ Since May 2026, I have been doing research on weak-to-strong generalization in [
 
 From Sep 2025 to Apr 2026, I worked with [Intelligent Ultrasound Research Center (Chinese)](https://ultrasound.ecnu.edu.cn/) in East China Normal University under Prof. [Jiangang Chen](https://faculty.ecnu.edu.cn/_s15/cjg2_en/main.psp/), where I received invaluable mentorship from Renxing Li, for which I am deeply grateful.
 
-In Dec 2024, I joined Research Group of [Haochen Xue](https://scholar.xjtlu.edu.cn/en/persons/haochen-xue/) (Ph.D. Candidate), and conducted MLLM-related research under instruction. Two projects I contributed to ultimately resulted in published papers.
+In Dec 2024, I joined Prof. Jionglong Su's group at Xi'an Jiaotong-Liverpool University, where I was mentored by [Haochen Xue](https://scholar.xjtlu.edu.cn/en/persons/haochen-xue/) (Ph.D. Candidate) and worked on MLLM evaluation and LLM robustness. Two projects I contributed to ultimately resulted in published papers.
 
 <br>
 
@@ -29,7 +29,7 @@ I am broadly interested in <strong style="color:blue;">learning from imperfect s
 My work so far includes:
 
 1. **Weak-to-Strong Generalization**
-    * Data selection for W2S: co-proposed RADS, a representation-aware method that selects the training points whose signal the strong student captures but the weak teacher misses, and ran experiments on 23 datasets. The paper is under review at ICLR 2027.
+    * Data selection for W2S: co-developed RADS, a representation-alignment data selection method that prioritizes training points with features the strong student encodes but the weak teacher misses. Across 9 datasets at a 50% budget, RADS achieves a mean performance gap recovered (PGR) of 0.62, exceeding the strongest non-RADS baseline by 0.1. I wrote and maintained the training and evaluation code, ran experiments on 23 datasets, and built a training-free CKA probe that predicts how much RADS gains over the unselected data. Co-first author; the paper is under review at ICLR 2027.
 
 <div style="height:2px;"></div>
 
@@ -44,9 +44,9 @@ My work so far includes:
 <div style="height:2px;"></div>
 
 4. **Medical AI (Ultrasound)**
-    * AI for musculoskeletal ultrasound: write and synthesize ML/DL methods for ultrasound automation in an interdisciplinary clinical review.
+    * AI for musculoskeletal ultrasound: as co-first author, led a review of AI-assisted musculoskeletal ultrasound for aromatase inhibitor–associated arthralgia (AIA), designing the systematic search, screening 816 records down to 129 included studies, and writing the AI-focused sections on ML/DL methods for ultrasound automation.
 
-    * Cross-team collaboration: coordinate between professors and clinicians to translate clinical needs into review scope and drive end-to-end manuscript workflow as the student lead.
+    * Cross-team collaboration: headed a 5-member student team and coordinated with professors and clinicians to translate clinical needs into the review scope and drive the manuscript workflow.
 
 <br>
 
