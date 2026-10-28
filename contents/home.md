@@ -29,12 +29,12 @@ I am broadly interested in <strong style="color:blue;">learning from imperfect s
 My work so far includes:
 
 1. **Weak-to-Strong Generalization**
-    * Data selection for W2S: co-developed RADS, a representation-alignment data selection method that prioritizes training points with features the strong student encodes but the weak teacher misses. Across 9 datasets at a 50% budget, RADS achieves a mean performance gap recovered (PGR) of 0.62, exceeding the strongest non-RADS baseline by 0.1. I wrote and maintained the training and evaluation code, ran experiments on 23 datasets, and built a training-free CKA probe that predicts how much RADS gains over the unselected data. Co-first author; the paper is under review at ICLR 2027.
+    * Data selection for W2S: co-developed RADS, a representation-alignment data selection method that prioritizes training points with features the strong student encodes but the weak teacher misses. Across 9 datasets at a 50% budget, RADS achieves a mean performance gap recovered (PGR) of 0.62, exceeding the strongest non-RADS baseline by 0.1. I wrote and maintained the training and evaluation code, ran experiments on 23 datasets, and built a training-free CKA probe that ranks datasets by how much the selected half outperforms the rest. Co-first author; the paper is under review at ICLR 2027.
 
 <div style="height:2px;"></div>
 
 2. **Multimodal LLMs**
-    * Evaluation & dataset construction: As part of the team, I participated in constructing and curating a 5,000+ sample multimodal real-world dialogue dataset with manually labeled question types, and assisted with benchmarking and result reporting across 20 MLLMs.
+    * Evaluation & dataset construction: As part of the team, I participated in constructing and curating a multimodal real-world dialogue dataset of 5,000+ conversations with manually labeled question types, and assisted with benchmarking and result reporting across 20 MLLMs, observing that models likely answered correctly when the needed fact was stated but otherwise could fail to decline questions about unmentioned things.
 
 <div style="height:2px;"></div>
 
